@@ -1,20 +1,26 @@
 "use client";
 
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 
-// import { useContext } from "react";
-// import { MobileContext } from "../context/MobileContext";
 import emailjs from "emailjs-com";
 import { ErrorMessage } from "./ErrorMessage";
 import { Button } from "./Button";
-import { SectionLayout } from "./Layout";
+
+interface PictureDayFormValues {
+  booking_for: "school" | "parent";
+  schoolName: string;
+  studentName: string;
+  contactPerson: string;
+  email: string;
+  NoOfStudents: string;
+  address: string;
+  dateTime: string;
+}
 
 const PictureDayForm = () => {
-  const isMobile = false;
-
-  const sendEmail = (values, resetForm) => {
+  const sendEmail = (values: PictureDayFormValues, resetForm: () => void) => {
     const templateParams = {
       booking_for: values.booking_for,
       name:
@@ -47,7 +53,7 @@ const PictureDayForm = () => {
       });
   };
 
-  const formik = useFormik({
+  const formik = useFormik<PictureDayFormValues>({
     initialValues: {
       booking_for: "school",
       schoolName: "",
@@ -87,8 +93,8 @@ const PictureDayForm = () => {
   });
 
   return (
-    <StyledForm onSubmit={formik.handleSubmit} isMobile={isMobile}>
-      <StyledCheckboxWrapper isMobile={isMobile}>
+    <StyledForm onSubmit={formik.handleSubmit}>
+      <StyledCheckboxWrapper>
         <StyledCheckbox>
           <input
             type="radio"
@@ -212,7 +218,7 @@ const PictureDayForm = () => {
         <ErrorMessage message={formik.errors.dateTime} />
       )}
 
-      <StyledButtonContainer isMobile={isMobile}>
+      <StyledButtonContainer>
         <Button type="reset" title="Reset" onClick={formik.handleReset} />
         <Button type="submit" title="Book a Photoshoot" submitButton />
       </StyledButtonContainer>
@@ -220,22 +226,22 @@ const PictureDayForm = () => {
   );
 };
 
-const StyledForm = styled.form<{ isMobile: boolean }>(
-  ({ isMobile }) => css`
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: ${isMobile ? "12px" : "16px"};
-    padding: ${isMobile ? "32px 0" : "64px 0"};
-    @media (max-width: 768px) {
-      max-width: 400px;
-    }
-    @media (max-width: 460px) {
-      max-width: 300px;
-    }
-  `
-);
+const StyledForm = styled.form`
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 64px 0;
+  @media (max-width: 768px) {
+    max-width: 400px;
+    gap: 12px;
+    padding: 32px 0;
+  }
+  @media (max-width: 460px) {
+    max-width: 300px;
+  }
+`;
 
 const StyledCheckboxWrapper = styled.div`
   display: flex;
