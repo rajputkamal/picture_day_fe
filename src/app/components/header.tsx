@@ -7,7 +7,7 @@ import styled, { css } from "styled-components";
 import { PictureDayLogo } from "./picture-day-logo";
 import { Navbar } from "./navbar";
 import { Button } from "./Button";
-import { Avatar } from "./Avatar";
+// import { Avatar } from "./Avatar";
 
 const Header = () => {
   const router = useRouter();
