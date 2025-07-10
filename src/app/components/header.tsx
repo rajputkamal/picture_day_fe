@@ -2,9 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
 import styled, { css } from "styled-components";
-// import { PictureDayLink } from "./picture-day-link";
+
 import { PictureDayLogo } from "./picture-day-logo";
 import { Navbar } from "./navbar";
 import { Button } from "./Button";
@@ -35,8 +34,9 @@ const Header = () => {
       </StyledLeftSection>
       <StyledHeaderRightSection>
         <Button title="Book a Photoshoot" onClick={navigateToBooking} />
-        <hr />
-       <Avatar loggedInUser />
+        {/* //TODO:: Login-Logout functionality */}
+        {/* <hr />
+        <Avatar loggedInUser /> */}
       </StyledHeaderRightSection>
     </StyledHeader>
   );

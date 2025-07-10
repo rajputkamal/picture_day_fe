@@ -1,6 +1,8 @@
 "use client";
+
 import React from "react";
 import styled from "styled-components";
+
 import { Avatar } from "./Avatar";
 
 const Card = () => {
@@ -60,4 +62,5 @@ const StyledClientWrapper = styled.div`
 const StyledClientDetails = styled.div`
   display: flex;
 `;
+
 export { Card };

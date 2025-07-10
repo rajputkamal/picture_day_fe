@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import styled from "styled-components";
 import Image from "next/image";
@@ -31,12 +32,7 @@ const HeroSection = () => {
         />
       </StyledLeftSection>
       <StyledRightSection>
-        <Image
-          src={HeroImage}
-          className="lt-header-logo"
-          alt="picture_day_hero_image"
-          unoptimized
-        />
+        <Image src={HeroImage} alt="picture_day_hero_image" unoptimized />
       </StyledRightSection>
     </SectionLayout>
   );

@@ -7,13 +7,13 @@ type AvatarProps = {
   src?: string;
   loggedInUser?: boolean;
   onLogout?: () => void;
-  initials?: string; // defaults to "KS" if not provided
+  initials?: string;
 };
 
 const Avatar: React.FC<AvatarProps> = ({
   loggedInUser = false,
   onLogout,
-  src= "https://cdn.prod.website-files.com/611970eeff02f896bda0d4f4/618425dfa6b01b0fffd8d3f8_Justin-G-Headshots.jpg",
+  src = "https://cdn.prod.website-files.com/611970eeff02f896bda0d4f4/618425dfa6b01b0fffd8d3f8_Justin-G-Headshots.jpg",
   initials = "KS",
 }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -42,7 +42,12 @@ const Avatar: React.FC<AvatarProps> = ({
   return (
     <Container ref={dropdownRef}>
       {src ? (
-        <AvatarImage alt="User avatar" loading="lazy" src={src} onClick={handleToggle} />
+        <AvatarImage
+          alt="User avatar"
+          loading="lazy"
+          src={src}
+          onClick={handleToggle}
+        />
       ) : (
         <InitialsCircle onClick={handleToggle}>{initials}</InitialsCircle>
       )}
@@ -55,8 +60,6 @@ const Avatar: React.FC<AvatarProps> = ({
     </Container>
   );
 };
-
-// Styled components
 
 const Container = styled.div`
   position: relative;

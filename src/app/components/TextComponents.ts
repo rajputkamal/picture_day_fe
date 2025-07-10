@@ -1,4 +1,5 @@
 "use client";
+
 import styled from "styled-components";
 
 export const StyledHeadingH3 = styled.h3`

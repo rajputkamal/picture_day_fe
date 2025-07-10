@@ -1,8 +1,9 @@
 "use client";
 
 import React from "react";
-import { StyledHeadingH3 } from "../components/TextComponents";
 import styled from "styled-components";
+
+import { StyledHeadingH3 } from "../components/TextComponents";
 import { Button } from "../components/Button";
 
 const Contact = () => {

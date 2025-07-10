@@ -1,14 +1,16 @@
 "use client";
+
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
-import { PictureDayLink } from "./picture-day-link";
 import { ChevronDown } from "lucide-react";
+
+import { PictureDayLink } from "./picture-day-link";
 
 const NAV_BAR_MENU = [
   { id: "/", name: "Home", link: "/" },
   { id: "/photos", name: "View Photos", link: "/photos" },
   { id: "/prints", name: "Order Prints", link: "/prints" },
-  { id: '/contact', name: "Contact Us", link: "/contact-us" },
+  { id: "/contact", name: "Contact Us", link: "/contact-us" },
 ];
 
 export const Navbar = () => {

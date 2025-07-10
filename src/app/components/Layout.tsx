@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import styled from "styled-components";
 
@@ -15,13 +16,13 @@ const SectionLayout = ({ children, heroSection }: SectionLayoutProps) => {
   );
 };
 
-const StyledSection = styled.section<{heroSection?: boolean}>`
-  background-color: ${props => props.heroSection ? 'black' : 'white'};
+const StyledSection = styled.section<{ heroSection?: boolean }>`
+  background-color: ${(props) => (props.heroSection ? "black" : "white")};
   padding: 0 64px;
   margin: 0 auto;
   color: white;
-  @media (max-width: 991px){
-     padding: 0 32px;
+  @media (max-width: 991px) {
+    padding: 0 32px;
   }
 `;
 

@@ -1,23 +1,27 @@
 "use client";
-import React from 'react'
-import styled from 'styled-components';
+
+import React from "react";
+import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 import Logo from "@/assets/logo.png";
 
 const PictureDayLogo = () => {
+  const router = useRouter();
   return (
     <StyledLogo>
-    <Image
-      src={Logo}
-      className="lt-header-logo"
-      alt="Lifetouch + Shutterfly"
-      width={100}
-      height={100}
-      unoptimized
-    />
-  </StyledLogo>
-  )
-}
+      <Image
+        src={Logo}
+        alt="Picture_day"
+        onClick={() => router.push("/")}
+        width={100}
+        height={100}
+        unoptimized
+      />
+    </StyledLogo>
+  );
+};
 
 const StyledLogo = styled.div`
   cursor: pointer;
@@ -28,4 +32,4 @@ const StyledLogo = styled.div`
   height: 80px;
 `;
 
-export {PictureDayLogo}
+export { PictureDayLogo };
