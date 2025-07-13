@@ -10,6 +10,7 @@ import { Button } from "../components/Button";
 import { FormSuccess } from "./FormSuccess";
 import { FormFailure } from "./FormFailure";
 import { useState } from "react";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 interface PictureDayFormValues {
   booking_for: "school" | "parent";
@@ -24,7 +25,10 @@ interface PictureDayFormValues {
 
 const PictureDayForm = () => {
   const [status, setStatus] = useState<"success" | "failure" | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
   const sendEmail = (values: PictureDayFormValues, resetForm: () => void) => {
+    setLoading(true);
     const templateParams = {
       booking_for: values.booking_for,
       name:
@@ -49,10 +53,12 @@ const PictureDayForm = () => {
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
         resetForm();
+        setLoading(false);
         setStatus("success");
       })
       .catch((error) => {
         console.log("FAILED...", error);
+        setLoading(false);
         setStatus("failure");
       });
   };
@@ -72,14 +78,12 @@ const PictureDayForm = () => {
       booking_for: Yup.string().required("Please select one option"),
       schoolName: Yup.string().when("booking_for", {
         is: "school",
-        then: (schema) =>
-          schema.required("School Name is required").max(64),
+        then: (schema) => schema.required("School Name is required").max(64),
         otherwise: (schema) => schema.notRequired(),
       }),
       studentName: Yup.string().when("booking_for", {
         is: "parent",
-        then: (schema) =>
-          schema.required("Student Name is required").max(64),
+        then: (schema) => schema.required("Student Name is required").max(64),
         otherwise: (schema) => schema.notRequired(),
       }),
       contactPerson: Yup.string()
@@ -97,13 +101,9 @@ const PictureDayForm = () => {
             .min(1, "Number of Students should be greater than 0"),
         otherwise: (schema) => schema.notRequired(),
       }),
-      address: Yup.string()
-        .required("Address is required")
-        .max(64),
-      dateTime: Yup.date()
-        .required("Date & Time is required"),
-    })
-    ,
+      address: Yup.string().required("Address is required").max(64),
+      dateTime: Yup.date().required("Date & Time is required"),
+    }),
     onSubmit: (values, { resetForm }) => {
       sendEmail(values, resetForm);
     },
@@ -229,7 +229,6 @@ const PictureDayForm = () => {
         <StyledInput
           type="datetime-local"
           id="dateTime"
-          placeholder="Date & Time"
           {...formik.getFieldProps("dateTime")}
         />
         {formik.touched.dateTime && formik.errors.dateTime && (
@@ -252,6 +251,7 @@ const PictureDayForm = () => {
         />
       )}
       {status === "failure" && <FormFailure setStatus={setStatus} />}
+      {loading && <LoadingSpinner />}
     </>
   );
 };

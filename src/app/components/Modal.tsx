@@ -52,6 +52,11 @@ const ModalContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 767px) {
+    width: 300px;
+    max-width: 300px;
+    height: 300px;
+  }
 `;
 
 const CloseIcon = styled.div`
