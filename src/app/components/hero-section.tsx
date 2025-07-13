@@ -32,7 +32,7 @@ const HeroSection = () => {
         />
       </StyledLeftSection>
       <StyledRightSection>
-        <Image src={HeroImage} alt="picture_day_hero_image" unoptimized />
+        <Image src={HeroImage} alt="picture_day_hero_image" />
       </StyledRightSection>
     </SectionLayout>
   );
