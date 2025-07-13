@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 
 import HeroImage from "@/assets/picture_day_hero.png";
 import { Button } from "./Button";
-import { SectionLayout } from "./Layout";
+import { SectionLayout } from "./SectionLayout";
 import { StyledHeadingH3 } from "./TextComponents";
 
 const HeroSection = () => {

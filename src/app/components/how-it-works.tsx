@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 import { StyledHeadingH3 } from "./TextComponents";
-import { SectionLayout } from "./Layout";
+import { SectionLayout } from "./SectionLayout";
 
 const HowItWorks = () => {
   return (

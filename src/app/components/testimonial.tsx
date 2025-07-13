@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { SectionLayout } from "./Layout";
+import { SectionLayout } from "./SectionLayout";
 import { StyledHeadingH3 } from "./TextComponents";
 import { Card } from "./Card";
 
