@@ -35,7 +35,7 @@ const Photos = () => {
           </TimelineLabel>
           <PhotoRow>
             {group.photos.map((src, i) => (
-              <PhotoCard key={i} onClick={() => setPreviewSrc(src)}>
+              <PhotoCard key={i}>
                 <img src={src} alt={`photo-${i}`} />
               </PhotoCard>
             ))}
@@ -43,6 +43,7 @@ const Photos = () => {
         </PhotoTimelineGroup>
       ))}
 
+      {/* //TODO:: To be added later */}
       {previewSrc && (
         <ModalOverlay onClick={() => setPreviewSrc(null)}>
           <ModalContent onClick={(e) => e.stopPropagation()}>
