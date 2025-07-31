@@ -15,7 +15,7 @@ const Card = () => {
       </p>
       <StyledClientWrapper>
         <div className="testimonials1_client-image-wrapper">
-         <Avatar />
+          <Avatar />
         </div>
         <StyledClientDetails
           className="testimonials1_client-details"
@@ -48,10 +48,7 @@ const StyledCard = styled.div`
   display: flex;
   color: black;
   cursor: pointer;
-  &:hover {
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  }
- 
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `;
 
 const StyledClientWrapper = styled.div`
