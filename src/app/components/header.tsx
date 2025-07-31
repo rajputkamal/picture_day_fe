@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 import { PictureDayLogo } from "./picture-day-logo";
 import { Navbar } from "./navbar";
