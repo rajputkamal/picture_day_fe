@@ -8,6 +8,7 @@ const Print = () => {
   return (
     <StyledSection>
       <StyledHeadingH3>Order Prints</StyledHeadingH3>
+      <p>Hang tight! We are working on your prints.</p>
     </StyledSection>
   );
 };

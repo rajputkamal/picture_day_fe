@@ -106,7 +106,6 @@ const PhotoCard = styled.div`
   }
 `;
 
-// ✅ Modal styles
 const ModalOverlay = styled.div`
   position: fixed;
   inset: 0;

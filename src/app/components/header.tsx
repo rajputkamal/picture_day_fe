@@ -112,6 +112,9 @@ const HamburgerIcon = styled.button`
   border: none;
   cursor: pointer;
   margin-right: 16px;
+  scale: 1.4;
+  color: black;
+  opacity: 0.8;
 
   @media (max-width: 767px) {
     display: block;
@@ -157,6 +160,7 @@ const CloseIcon = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  color: black;
 `;
 
 export { Header };
