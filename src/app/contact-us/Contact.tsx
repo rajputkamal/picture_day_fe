@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { MouseEvent, useState } from "react";
 import styled from "styled-components";
 import emailjs from "emailjs-com";
 
@@ -17,7 +17,7 @@ const Contact = () => {
   const [status, setStatus] = useState<"success" | "failure" | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleSubmitFeedback = (e: any) => {
+  const handleSubmitFeedback = (e: MouseEvent<HTMLButtonElement>) => {
     setLoading(true);
     e.preventDefault();
     console.log("formData", userName, userEmail, message);
