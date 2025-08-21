@@ -111,7 +111,7 @@ const HamburgerIcon = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  margin-right: 16px;
+  margin-right: 8px;
   scale: 1.4;
   color: black;
   opacity: 0.8;

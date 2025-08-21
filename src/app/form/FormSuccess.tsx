@@ -24,8 +24,8 @@ const FormSuccess = ({ userName, feedback, setStatus }: FormSuccessProps) => {
         )}
         {feedback && (
           <p>
-            Congratulations! <strong>{userName}</strong> <br /> Thank you for
-            submitting your query. Our team will contact you shortly.
+            <strong>{userName}</strong> <br /> Thank you for submitting your
+            query. Our team will contact you shortly.
           </p>
         )}
       </StyledSection>
